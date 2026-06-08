@@ -2,7 +2,7 @@ name: Update README cards
 
 on:
   schedule:
-    - cron: "0 3 * * *" # Runs once daily at midnight
+    - cron: "37 16 * * *" # Runs once daily at midnight
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
-          options: "username=fengbanjiazhu&show_icons=true&count_private=true&include_all_commits=true"
+          options: "username=fengbanjiazhu&show_icons=true&count_private=true&include_all_commits=true&theme=tokyonight"
           path: profile/stats.svg
           token: ${{ secrets.GH_STATS_TOKEN }}
 
@@ -27,14 +27,14 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
-          options: "username=fengbanjiazhu&layout=compact&langs_count=6&hide=ShaderLab,HLSL,HTML,Shell,Dockerfile,Mathematica,Pug"
+          options: "username=fengbanjiazhu&layout=compact&langs_count=6&hide=ShaderLab,HLSL,HTML,Shell,Dockerfile,Mathematica,Pug&theme=tokyonight"
           path: profile/top-langs.svg
           token: ${{ secrets.GH_STATS_TOKEN }}
 
       - name: Generate streak stats
         uses: DenverCoder1/github-readme-streak-stats@main
         with:
-          options: user=${{ github.repository_owner }}&theme=default&disable_animations=true
+          options: user=${{ github.repository_owner }}&theme=tokyonight&disable_animations=true
           path: profile/streak.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
